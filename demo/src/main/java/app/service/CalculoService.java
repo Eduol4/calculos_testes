@@ -28,7 +28,6 @@ public class CalculoService {
 
 	}
 
-
 	public int soma(List<Integer> lista) {
 		int soma = 0;
 		for (int i = 0; i < lista.size(); i++) {
@@ -40,11 +39,9 @@ public class CalculoService {
 		return soma;
 	}
 
-
 	public double media(List<Integer> lista) {
 		return this.soma(lista) / lista.size();
 	}
-
 
 	public double mediana(List<Integer> lista) {
 		if (lista == null || lista.isEmpty()) {

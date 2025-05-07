@@ -18,7 +18,6 @@ import app.service.CalculoService;
 @RequestMapping("/api/calculos")
 @CrossOrigin("*")
 public class CalculoController {
-
 	@Autowired
 	private CalculoService calculoService;
 
@@ -27,5 +26,4 @@ public class CalculoController {
 		Calculo calculo = this.calculoService.calcular(entrada);
 		return new ResponseEntity<>(calculo, HttpStatus.OK);
 	}
-
 }

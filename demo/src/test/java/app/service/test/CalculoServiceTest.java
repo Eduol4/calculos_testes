@@ -34,7 +34,6 @@ public class CalculoServiceTest {
 		assertEquals(resultadoEsperado, resultadoObtido);
 	}
 	
-
 	@Test
 	@DisplayName("Cena 02 - Testando o método somar com valores inválidos")
 	void cenario02() {
@@ -49,9 +48,6 @@ public class CalculoServiceTest {
 		
 		
 	}
-	
-	
-	
 	
 	@Test
 	@DisplayName("Cena 03 - Testar mediana com número par de elementos")
@@ -78,7 +74,6 @@ public class CalculoServiceTest {
 		assertEquals(3, this.calculoService.mediana(lista));
 	}
 	
-	
 	@Test
 	@DisplayName("Cena 05 - Testar mediana com número ímpar de elementos")
 	void cenario05() {
@@ -93,7 +88,32 @@ public class CalculoServiceTest {
 		
 		assertEquals(8, this.calculoService.mediana(lista));
 	}
-	
-	
+
+	// TESTES UNITÁRIOS
+	@Test
+	@DisplayName("Cena 06 - Testando o método média com valores válidos")
+	void cenario06() {
+    	List<Integer> lista = new ArrayList<>();
+    	lista.add(10);
+    	lista.add(20);
+    	lista.add(30);
+
+    	double resultadoEsperado = 20.0;
+    	double resultadoObtido = this.calculoService.media(lista);
+
+    	assertEquals(resultadoEsperado, resultadoObtido);
+	}
+	// VERIFICA SE A MÉDIA É CALCULADA CORRETAMENTE E A PRECISÃO DA OPERAÇÃO DE MÉDIA
+
+	@Test
+	@DisplayName("Cena 07 - Testando o método mediana com lista vazia (Exceção)")
+	void cenario07() {
+    	List<Integer> lista = new ArrayList<>();
+    
+    	assertThrows(IllegalArgumentException.class, () -> {
+        	this.calculoService.mediana(lista);
+    	});
+	}
+	// VERIFICA SE UMA EXCEÇÃO É LANÇADA QUANDO A LISTA ESTÁ VAZIA
 
 }
