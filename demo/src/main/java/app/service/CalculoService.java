@@ -16,6 +16,14 @@ public class CalculoService {
 	@Autowired
 	private CalculoRepository calculoRepository;
 
+	public List<Calculo> findAll() {
+		return this.calculoRepository.findAll();
+	}
+
+	public Calculo findById(long id) {
+		return this.calculoRepository.findById(id).get();
+	}
+
 	public Calculo calcular(Entrada entrada) {
 
 		Calculo calculo = new Calculo();
@@ -25,7 +33,6 @@ public class CalculoService {
 		calculo.setMediana(this.mediana(entrada.getLista()));
 
 		return calculo;
-
 	}
 
 	public int soma(List<Integer> lista) {

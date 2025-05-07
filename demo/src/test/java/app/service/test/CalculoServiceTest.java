@@ -45,8 +45,6 @@ public class CalculoServiceTest {
 		assertThrows(Exception.class,() -> {
 			this.calculoService.soma(lista);
 		});
-		
-		
 	}
 	
 	@Test
