@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;
 import static org.mockito.ArgumentMatchers.any;
 
+import java.util.Arrays;
+import java.util.Optional;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,7 +31,7 @@ public class CalculoControllerTest {
     @DisplayName("Cenário 08 - Testando o método findAll com o mock")
     void cenario08() {
         List<Calculo> lista = new ArrayList<>();
-        List<Interger> listaValores = Arrays.asList(1, 1, 1);
+        List<Integer> listaValores = Arrays.asList(1, 1, 1);
         lista.add(new Calculo(1, listaValores, 3, 2.0, 2.0));
         lista.add(new Calculo(2, listaValores, 4, 2.0, 2.0));
         lista.add(new Calculo(3, listaValores, 5, 2.0, 2.0));
@@ -44,7 +46,7 @@ public class CalculoControllerTest {
     @Test
     @DisplayName("Cenário 09 - Testando o método findById com o mock")
     void cenario09() {
-        List<Interger> listaValores = Arrays.asList(1, 1, 1, 1);
+        List<Integer> listaValores = Arrays.asList(1, 1, 1, 1);
         Calculo calculo = new Calculo(1, listaValores, 50, 2.0, 2.0);
 
         when(calculoRepository.findById(1L)).thenReturn(Optional.of(calculo));
